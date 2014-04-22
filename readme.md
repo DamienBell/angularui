@@ -10,12 +10,12 @@ project.
 1. Fork the project from Github into a new folder and set up a new Github
 project to track your changes:
 
-`
+```
 git clone git@github.com:xoxco/starterkit.git my_project/
-cs my_project/
+cd my_project/
 git remote rename origin starterkit
 git remote add origin <URL_TO_NEW_GITHUB_PROJECT>
-`
+```
 
 2. Run `npm install`
 3. Run `bower install`
