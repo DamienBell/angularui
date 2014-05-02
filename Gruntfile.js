@@ -7,13 +7,17 @@ module.exports = function(grunt) {
 		concat: {
 		    dist: {
 		        src: [
-              'dev/js/*.js',
+					'dev/js/*.js',
 		        ],
 		        dest: 'dev/build/app.js',
 		    },
 		    libs: {
 		        src: [
-		        	// 'public/js/libs/jquery-1.10.2.min.js',
+		        	 'public/js/libs/jquery/dist/jquery.js',
+		        	 'public/js/libs/angular/angular.js',
+		        	 'public/js/libs/angular-ui-utils/ui-utils.js',
+		        	 'public/js/libs/underscore/underscore.js',
+		        	 'public/js/libs/datejs/build/date.js',
 		        ],
 		        dest: 'dev/build/libs.js',
 		    }
@@ -110,8 +114,8 @@ module.exports = function(grunt) {
 
     // 3. Where we tell Grunt we plan to use this plug-in.
     grunt.loadNpmTasks('grunt-contrib-concat');
-	  grunt.loadNpmTasks('grunt-contrib-uglify');
-	  grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-shell');
