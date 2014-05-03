@@ -7,15 +7,17 @@ module.exports = function(grunt) {
 		concat: {
 		    dist: {
 		        src: [
-					'dev/js/*.js',
+					'dev/js/app.js',
+					'dev/js/app.directives.js',
+					'dev/js/app.filters.js',
+					'dev/js/app.services.js',
+					'dev/js/controllers/*.js'
 		        ],
 		        dest: 'dev/build/app.js',
 		    },
 		    libs: {
 		        src: [
-		        	 'public/js/libs/jquery/dist/jquery.js',
-		        	 'public/js/libs/angular/angular.js',
-		        	 'public/js/libs/angular-ui-utils/ui-utils.js',
+		        	 'public/js/libs/jquery/dist/jquery.min.js',
 		        	 'public/js/libs/underscore/underscore.js',
 		        	 'public/js/libs/datejs/build/date.js',
 		        ],
@@ -77,13 +79,13 @@ module.exports = function(grunt) {
             spawn:false,
           },
         },
-		    scripts: {
-		        files: ['dev/js/*.js'],
-		        tasks: ['concat','copy'],
-		        options: {
-		            spawn: false,
-		        },
-		    },
+		scripts: {
+	        files: ['dev/js/*.js'],
+	        tasks: ['concat','copy'],
+	        options: {
+	            spawn: false,
+	        },
+		},
         css: {
             files: ['dev/css/*.scss','dev/css/components/*.scss'],
             tasks: ['sass','autoprefixer','copy'],
