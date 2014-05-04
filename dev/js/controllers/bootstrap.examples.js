@@ -1,33 +1,3 @@
-// App.js
-// This is the main javascript file for this project.
-var _DEBUG = true;
-
-var App = angular.module('app', ['ngRoute', 
-								'ngTouch',
-								'ui.bootstrap'
-						]);
-
-App.config(['$routeProvider',
-	function($routeProvider){
-	
-		console.log('router');
-		
-	    $routeProvider.when('/', {
-	        templateUrl: 'partials/home.html',
-	        controller:  'HomeController' 
-	 	 })
-	 	 .when('/modal', {
-	        templateUrl: 'partials/bootstrap.modal.html',
-	        controller:  'ModalController' 
-	 	 })
-	 	 .otherwise({
-	        redirectTo: '/'
-	      });
-  }]);
-
-
-
-
 App.controller('ModalController', ['$scope', '$modal',
 
   function($scope, $modal) {
@@ -74,8 +44,3 @@ var ModalInstanceCtrl = function ($scope, $modalInstance, items) {
     $modalInstance.dismiss('cancel');
   };
 };
-App.controller('HomeController', ['$scope', '$http', '$location',
-  function($scope, $http, $location) {
-	  console.log('Home Controller sss');
-  }
-]);

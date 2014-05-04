@@ -18,6 +18,7 @@ module.exports = function(grunt) {
 		    libs: {
 		        src: [
 		        	 'public/js/libs/jquery/dist/jquery.min.js',
+		        	 'public/js/libs/bootstrap/dist/js/bootstrap.min.js',
 		        	 'public/js/libs/underscore/underscore.js',
 		        	 'public/js/libs/datejs/build/date.js',
 		        ],
@@ -46,14 +47,14 @@ module.exports = function(grunt) {
 		        }
 		    }
 		},
-    autoprefixer: {
+		autoprefixer: {
         dist: {
             files: {
                   'dev/build/style.css': 'dev/build/style.css',
             }
         }
     },
-    shell: {
+		shell: {
         compile_views: {
           command: 'dev/scripts/build.sh',
           options: {
@@ -80,7 +81,7 @@ module.exports = function(grunt) {
           },
         },
 		scripts: {
-	        files: ['dev/js/*.js'],
+	        files: ['dev/js/*.js','dev/js/controllers/*.js'],
 	        tasks: ['concat','copy'],
 	        options: {
 	            spawn: false,

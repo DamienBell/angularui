@@ -2,7 +2,10 @@
 // This is the main javascript file for this project.
 var _DEBUG = true;
 
-var App = angular.module('app', ['ngRoute']);
+var App = angular.module('app', ['ngRoute', 
+								'ngTouch',
+								'ui.bootstrap'
+						]);
 
 App.config(['$routeProvider',
 	function($routeProvider){
@@ -12,6 +15,10 @@ App.config(['$routeProvider',
 	    $routeProvider.when('/', {
 	        templateUrl: 'partials/home.html',
 	        controller:  'HomeController' 
+	 	 })
+	 	 .when('/modal', {
+	        templateUrl: 'partials/bootstrap.modal.html',
+	        controller:  'ModalController' 
 	 	 })
 	 	 .otherwise({
 	        redirectTo: '/'
