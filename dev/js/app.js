@@ -13,12 +13,8 @@ App.config(['$routeProvider',
 		console.log('router');
 		
 	    $routeProvider.when('/', {
-	        templateUrl: 'partials/home.html',
-	        controller:  'HomeController' 
-	 	 })
-	 	 .when('/modal', {
-	        templateUrl: 'partials/bootstrap.modal.html',
-	        controller:  'ModalController' 
+	        templateUrl: 'partials/example.html',
+	        controller:  'exampleController'
 	 	 })
 	 	 .otherwise({
 	        redirectTo: '/'

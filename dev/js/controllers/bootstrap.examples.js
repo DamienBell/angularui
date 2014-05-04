@@ -5,7 +5,7 @@ App.controller('ModalController', ['$scope', '$modal',
 	  console.log('modal controller example 1');
 	  $scope.items = ['item1', 'item2', 'item3'];
 
-  $scope.open = function (size) {
+	  $scope.open = function (size) {
 
 	  var modalInstance = $modal.open({
 	      templateUrl: 'myModalContent.html',
@@ -25,22 +25,21 @@ App.controller('ModalController', ['$scope', '$modal',
 			console.log('modal instance done');
 	    });
   };
-  
   }
 ]);
 
 var ModalInstanceCtrl = function ($scope, $modalInstance, items) {
 
-  $scope.items = items;
-  $scope.selected = {
-    item: $scope.items[0]
-  };
+$scope.items = items;
+$scope.selected = {
+item: $scope.items[0]
+};
 
-  $scope.ok = function () {
-    $modalInstance.close($scope.selected.item);
-  };
+$scope.ok = function () {
+$modalInstance.close($scope.selected.item);
+};
 
-  $scope.cancel = function () {
-    $modalInstance.dismiss('cancel');
-  };
+$scope.cancel = function () {
+$modalInstance.dismiss('cancel');
+};
 };
